@@ -1,0 +1,53 @@
+{
+  "name": "@commonwealth-savings-wizard/theme",
+  "private": true,
+  "description": "",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Commonwealth",
+  "contributors": [
+    "Charlie Wright <charlie@cwgw.co> (https://cwgw.co)"
+  ],
+  "dependencies": {
+    "@juggle/resize-observer": "^3.3.0",
+    "@mdx-js/mdx": "^1.6.22",
+    "@reach/dialog": "^0.15.0",
+    "@reach/menu-button": "^0.15.1",
+    "@reach/visually-hidden": "^0.15.0",
+    "@react-spring/web": "^9.1.2",
+    "@theme-ui/presets": "^0.3.0",
+    "@zendeskgarden/container-field": "^1.3.7",
+    "@zendeskgarden/container-keyboardfocus": "^0.4.8",
+    "@zendeskgarden/container-selection": "^1.3.9",
+    "deepmerge": "^4.2.2",
+    "gatsby-plugin-manifest": "^2.4.34",
+    "gatsby-plugin-mdx": "^1.2.34",
+    "gatsby-plugin-offline": "^3.2.31",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-theme-ui": "^0.3.0",
+    "prop-types": "^15.7.2",
+    "react-feather": "^2.0.9",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.3.4",
+    "sift": "^13.5.2",
+    "theme-ui": "^0.3.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.24.47",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cwgw/after-tax-savings-wizard-demo",
+    "directory": "theme"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "start": "gatsby develop"
+  }
+}

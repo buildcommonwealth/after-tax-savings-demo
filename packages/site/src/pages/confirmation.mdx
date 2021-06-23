@@ -1,0 +1,56 @@
+import { TimedModal } from "@commonwealth-savings-wizard/theme";
+import confirmation from "../assets/images/confirmation.svg";
+
+<Grid
+  sx={{
+    minHeight: 400,
+    mx: [0, null, -6],
+    px: [0, null, 6],
+    gridTemplateColumns: ["1fr", null, "1fr 1fr"],
+    gridColumnGap: 5,
+    gridRowGap: 4,
+    borderRadius: ["none", null, "lg"],
+    boxShadow: ["none", null, "raised"],
+  }}
+>
+
+
+<Box
+  sx={{
+    py: [0, null, 5],
+    gridRow: [2, null, 1],
+  }}
+>
+
+
+<Text variant="eyebrow">{"Successfully submitted!"}</Text>
+
+# Congratulations!
+
+You’re on your way to growing your emergency fund.
+
+Feel reassured knowing you’ve taken the first step on your path to financial security.
+
+You’ll receive an email confirmation and an Emergency Fund Card in the mail.
+
+</Box>
+
+
+<Image
+  src={confirmation}
+  sx={{
+    height: ["calc(150px + 35vw)", null, "auto"],
+    mr: [-3, null, -6],
+    ml: [-3, null, 0],
+    borderTopRightRadius: ["none", null, "lg"],
+    borderBottomRightRadius: ["none", null, "lg"],
+    bg: "green",
+  }}
+/>
+
+</Grid>
+
+
+<TimedModal delay={12000} size="full">
+  <Partial slug="modal-finish-final" />
+</TimedModal>

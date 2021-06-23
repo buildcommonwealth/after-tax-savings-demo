@@ -1,0 +1,32 @@
+{
+  "name": "commonwealth-savings-wizard",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Commonwealth",
+  "contributors": [
+    "Charlie Wright <charlie@cwgw.co> (https://cwgw.co)"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "pretty-quick": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cwgw/after-tax-savings-wizard-demo"
+  },
+  "resolutions": {
+    "@mdx-js/react": "^2.0.0-next.7"
+  },
+  "scripts": {
+    "build": "yarn workspace @commonwealth-savings-wizard/site build",
+    "clean": "yarn workspace @commonwealth-savings-wizard/site clean",
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
+    "pre-commit": "pretty-quick --staged --pattern **/*.{js,jsx,json}",
+    "prepare": "test -z $NETLIFY && husky install || :",
+    "serve": "yarn workspace @commonwealth-savings-wizard/site serve",
+    "start": "yarn workspace @commonwealth-savings-wizard/site start"
+  }
+}

@@ -1,0 +1,160 @@
+import heroIllustration from "../assets/images/welcome.svg";
+import starterSavings from "../assets/images/starter-savings-graph.svg";
+
+<Feature>
+
+<Box sx={{ gridRow: [2, 2, 1] }}>
+
+<Text variant="display1">
+  Take the <span color="white">first step</span> on your financial security
+  journey.
+</Text>
+
+CW Financial’s Emergency Fund is an easy, no-fee account that helps you set aside money to cover any surprise expenses.
+
+<Button to="0" sx={{ mt: 4 }}>
+  {"Get started →"}
+</Button>
+
+</Box>
+
+<Image
+  src={heroIllustration}
+  sx={{
+    width: ["100%", "100%", "150%"],
+    height: "100%",
+    "& img": { ml: [0, 0, "calc(10 / 150 * -100%)"], gridRow: 1 },
+  }}
+/>
+
+</Feature>
+
+
+<Box
+  as="h3"
+  variant="text.display2"
+  sx={{
+    position: "relative",
+    color: "primary",
+    maxWidth: "small",
+    mt: 6,
+    mb: 4,
+    "&:after": {
+      position: "absolute",
+      left: 0,
+      bottom: -2,
+      height: 2,
+      width: "4em",
+      bg: "yellow",
+      content: "''",
+    },
+  }}
+>
+  {"Why do I need an emergency"}&nbsp;{"fund?"}
+</Box>
+
+<Box sx={{ maxWidth: "large", mx: "auto", mb: 3 }} >
+
+Unexpected expenses happen to everyone. Credit cards or payday loans can help in the moment but can set you financially off-course.
+
+With an emergency fund, you’ll have the cash set aside to cover the unexpected and won’t have to rely on costly alternatives.
+
+</Box>
+
+<Image src={starterSavings} sx={{ my: 4 }} />
+
+<Box sx={{ maxWidth: "large", mx: "auto", mb: 6 }} >
+
+Think of your emergency fund as preparation for two types of events:
+
+1. **Starter Savings covers you for Unexpected Expenses.** Expenses like a car repair or a dentist visit happen all of the time. Typically, $500 - $1,000 is a good savings goal to be prepared for these expenses. Use these funds when you need them and then rebuild the savings. 
+
+2. **The full Emergency Fund covers you for Prolonged Income Loss.** It’s important to be prepared for a prolonged period of reduced income. Most experts recommend saving enough money to cover 3-6 months' of expenses.
+
+Building up an emergency fund that can cover unexpected expenses and reductions in income will prepare you for any financial surprises, large or small. With that financial stability, you can focus on saving for retirement.
+
+</Box>
+
+
+<Box
+  as="h3"
+  variant="text.display2"
+  sx={{
+    position: "relative",
+    color: "primary",
+    maxWidth: "small",
+    mt: 6,
+    mb: 4,
+    "&:after": {
+      position: "absolute",
+      left: 0,
+      bottom: -2,
+      height: 2,
+      width: "4em",
+      bg: "yellow",
+      content: "''",
+    },
+  }}
+>
+  {"How does CW Financial’s Emergency Fund work?"}
+</Box>
+
+<Box sx={{ maxWidth: "large", mx: "auto", mb: 3 }} >
+
+Remembering to set money aside can be a challenge. We want to make saving easy.
+
+Each pay period, we will automatically transfer a small amount of money from your paycheck into your Emergency Fund. Those funds will then be available to use whenever you need them. Plus, you can always pause or change your savings amount.
+
+After you set up your Emergency Fund account, we will mail you an Emergency Fund Card that’s linked to your account. With this card, you can access funds instantly to cover your next emergency expense.
+
+</Box>
+
+<Box
+  sx={{
+    display: "grid",
+    maxWidth: "100%",
+    gridTemplateColumns: ["1fr", "repeat(3, minmax(0, 1fr))"],
+    gap: 4,
+    textAlign: "center",
+    color: "primary",
+    fontFamily: "heading",
+    fontSize: 3,
+    lineHeight: "1.2",
+    py: 3,
+    "& p": {
+      maxWidth: '13em',
+      marginX: 'auto',
+    }
+  }}
+>
+
+
+<Box>
+  <Icon icon={"money"} sx={{ mb: 3, fontSize: 8 }} />
+  <p>Set your savings amount.</p>
+</Box>
+
+<Box>
+  <Icon icon={"bank"} sx={{ mb: 3, fontSize: 8 }} />
+  <p>Funds are transferred automatically each pay period.</p>
+</Box>
+
+<Box>
+  <Icon icon={"wateringCan"} sx={{ mb: 3, fontSize: 8 }} />
+  <p>Feel secure in growing your savings.</p>
+</Box>
+
+</Box>
+
+
+<Box sx={{ maxWidth: "large", mx: "auto", mb: 6 }} >
+
+And don’t worry. There are no withdrawal fees, minimum balances, nothing. Just a safe place to start saving and feeling prepared.
+
+</Box>
+
+<CTA
+  heading="Ready to take the first step on your financial security journey?"
+  to="0"
+  cta="Let’s get going"
+/>

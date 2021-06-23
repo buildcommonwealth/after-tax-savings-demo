@@ -1,0 +1,61 @@
+---
+cta: Get started
+illustration: ../assets/images/0-get-started.svg
+---
+
+# Taking the first step never felt so easy.
+
+Please provide your personal information to get started.
+
+<Grid sx={{ gridTemplateColumns: "1fr 1fr", my: 4 }}>
+  <Field
+    sx={{ my: 0 }}
+    label="First name"
+    placeholder="First name"
+    name="given-name"
+    required
+  />
+  <Field
+    sx={{ my: 0 }}
+    label="Last name"
+    placeholder="Last name"
+    name="family-name"
+    required
+  />
+</Grid>
+
+<Section
+  conditions={{
+    $and: [
+      { $isSet: "given-name" },
+      { $isSet: "family-name" }
+    ]
+  }}
+  remain
+>
+
+
+<Field
+  label="Email"
+  name="email"
+  placeholder="Your email address"
+  required
+  type="email"
+  width="half"
+/>
+
+</Section>
+
+
+<Section
+  conditions={{ $isSet: "email" }}
+  remain
+>
+
+Open an Emergency Fund in 2 quick steps.
+
+1. Choose how much you want to save
+2. Review, confirm, and watch your savings grow
+
+</Section>
+

@@ -1,0 +1,81 @@
+---
+cta: Review and confirm
+illustration: ../assets/images/3-review-and-confirm.svg
+---
+
+# Review and confirm.
+
+Review the information below to make sure everything is correct. You can always sign-in later to change your savings amount or pause for a week or two. It’s up to you.
+
+<FieldValue
+  fields={[
+    "savings-goal",
+    "savings-goal-other-amount",
+    "savings-contribution",
+    "savings-contribution-other-amount",
+  ]}
+  children={([goal, goalOther, amount, amountOther]) => {
+    let g = goal === "Other" ? goalOther : goal;
+    let c = amount === "Other" ? amountOther : amount;
+    let periods = '';
+    let time = '';
+    if (!isNaN(g) && !isNaN(c)) {
+      const period = 7;
+      const month = 30;
+      periods = Math.ceil(g / c);
+      const months = Math.ceil(periods * period / month);
+      const remainder = month - ((periods * period) % month);
+      const qualifier = remainder < 3 ? "" : remainder < 8 ? "About" : "Less than";
+      time = `${qualifier} ${months} month${months > 1 ? "s" : ""}`
+    }
+    return (
+      <>
+        <Box sx={{ my: 4 }}>
+          <Text sx={{ color: "navy" }}>
+            <strong>Your starter savings goal</strong>
+          </Text>
+          <Text
+            sx={{
+              fontSize: 5,
+              fontFamily: "heading",
+              fontWeight: 300,
+              color: "success",
+            }}
+          >
+            ${g}
+          </Text>
+        </Box>
+        <Box sx={{ my: 4 }}>
+          <Text sx={{ color: "navy" }}>
+            <strong>Amount saved with each paycheck</strong>
+          </Text>
+          <Text
+            sx={{
+              fontSize: 5,
+              fontFamily: "heading",
+              fontWeight: 300,
+              color: "success",
+            }}
+          >
+            ${c}
+          </Text>
+        </Box>
+        <Box sx={{ my: 4 }}>
+          <Text sx={{ color: "navy" }}>
+            <strong>Time until you reach your goal</strong>
+          </Text>
+          <Text
+            sx={{
+              fontSize: 5,
+              fontFamily: "heading",
+              fontWeight: 300,
+              color: "success",
+            }}
+          >
+            {time}
+          </Text>
+        </Box>
+      </>
+    );
+  }}
+/>

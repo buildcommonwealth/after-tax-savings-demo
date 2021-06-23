@@ -1,0 +1,96 @@
+---
+cta: Set your savings
+illustration: ../partials/savings-illustration.mdx
+---
+
+# Choose how much you want to save.
+
+Each payday, the amount you’ve chosen will be automatically transferred to your Emergency Fund. Effortless, automated savings that will add up over time!  
+
+And you’re always in control. You can change your contribution amounts or pause for a week or two—it’s up to you.
+
+Set your Starter Savings goal. Once you reach this, you can set another goal.
+
+<Field
+  name="savings-goal"
+  label="Set your starter savings goal"
+  type="tiles"
+  options={[
+    { value: 500, text: "$500" },
+    { value: 1000, text: "$1000" },
+    { value: 2500, text: "$2500" },
+    "Other",
+  ]}
+  defaultValue={1000}
+  required
+/>
+
+<Section conditions={{ "savings-goal": "Other" }} >
+
+
+<Field
+  name="savings-goal-other-amount"
+  label="What is your savings goal?"
+  type="number"
+  units="USD"
+  required
+/>
+
+</Section>
+
+
+<Field
+  name="savings-contribution"
+  label="How much do you want to save each payday?"
+  hint="You can change this amount later"
+  type="tiles"
+  options={[
+    { value: 15, text: "$15" },
+    { value: 20, text: "$20" },
+    { value: 25, text: "$25" },
+    "Other",
+  ]}
+  defaultValue={20}
+  required
+/>
+
+<Section conditions={{ "savings-contribution": "Other" }} >
+
+
+<Field
+  name="savings-contribution-other-amount"
+  label="What amount would you like to save each week?"
+  type="number"
+  units="USD"
+  required
+/>
+
+</Section>
+
+<FieldValue
+  fields={[
+    { field: "savings-goal", defaultValue: 1000 },
+    { field: "savings-goal-other-amount" },
+    { field: "savings-contribution", defaultValue: 20 },
+    { field: "savings-contribution-other-amount" }
+  ]}
+  children={([ goal, goalOther, amount, amountOther ]) => {
+    let g = goal === "Other" ? goalOther : goal;
+    let c = amount === "Other" ? amountOther : amount;
+    if (!g || !c || isNaN(g) || isNaN(c)) return null;
+    const period = 7;
+    const month = 30;
+    const periods = Math.ceil(g / c);
+    const months = Math.ceil(periods * period / month);
+    const remainder = month - ((periods * period) % month);
+    const qualifier = remainder < 3 ? "" : remainder < 8 ? "about" : "less than";
+    return (
+      <Message>
+        You'll reach your goal in {qualifier}
+        <span sx={{ color: "navy" }}> {months} </span>
+        month{months > 1 ? "s" : ""}.
+      </Message>
+    );
+  }}
+/>
+
